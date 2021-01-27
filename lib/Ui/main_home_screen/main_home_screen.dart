@@ -285,7 +285,6 @@ class _MainScreenState extends State<MainScreen> {
             child: Stack(
               children: [
                 _buildScreens[_currentIndex],
-                Positioned(bottom: 0,child: RunningSongWidget())
               ],
             )
           )),
