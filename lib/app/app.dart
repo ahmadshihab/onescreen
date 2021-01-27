@@ -3,7 +3,10 @@ import 'package:rjs/Ui/Auth/Pages/login_page.dart';
 import 'package:rjs/Ui/Auth/Pages/register_page.dart';
 import 'package:rjs/Ui/home_page/Page/HomePage.dart';
 import 'package:rjs/Ui/main_home_screen/main_home_screen.dart';
+import 'package:rjs/Ui/playing_song_page/page/playing_song_page.dart';
 import 'package:rjs/Ui/start_page/start_page.dart';
+
+import '../Ui/home_page/Page/HomePage.dart';
 
 class App extends StatelessWidget {
   // This widget is the root of your application.
@@ -13,22 +16,10 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: StartPage(),
+      home: MainScreen(),
     );
   }
 }
