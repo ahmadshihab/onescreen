@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:rjs/Ui/favorite/page/favorite_page.dart';
+import 'package:rjs/Ui/filtered/filtered_page.dart';
 import 'package:rjs/Ui/home_page/Page/HomePage.dart';
 import 'package:rjs/Ui/second_page/page/second_page.dart';
 import 'package:rjs/core/ui/global_widgets/running_song_widget.dart';
@@ -28,8 +30,8 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> _buildScreens = [
     HomePage(),
     SecondPage(),
-    Container(),
-    Container(),
+    FilteredPage(),
+    FavoritePage(),
     Container(),
   ];
 
