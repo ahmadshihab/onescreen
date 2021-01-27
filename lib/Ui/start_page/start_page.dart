@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:rjs/Ui/Auth/Pages/login_page.dart';
 import 'package:rjs/Ui/Auth/Pages/register_page.dart';
+import 'package:rjs/Ui/main_home_screen/main_home_screen.dart';
 import 'package:rjs/core/Util.dart';
 import 'package:rjs/core/custom_dimensions.dart';
+import 'package:rjs/core/utils/screen_utils/screen_utils.dart';
 
 class StartPage extends StatefulWidget {
   @override
@@ -12,6 +15,8 @@ class StartPage extends StatefulWidget {
 class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, allowFontScaling: true);
+    ScreensHelper(context);
     return SafeArea(
       child: Scaffold(
           body: Stack(
@@ -32,7 +37,12 @@ class _StartPageState extends State<StartPage> {
                   Padding(
                     padding: EdgeInsets.only(
                         top: CustomDimensions(context).height * 0.16),
-                    child: Image.asset('assets/images/bigradio.png'),
+                    child: InkWell(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (ctx) => MainScreen()));
+                        },
+                        child: Image.asset('assets/images/bigradio.png')
+                    ),
                   ),
                   SizedBox(
                     height: 10,
