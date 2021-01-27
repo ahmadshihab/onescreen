@@ -18,7 +18,7 @@ class _BasicDialogState extends State<BasicDialog> {
         borderRadius: BorderRadius.circular(8),
         side: BorderSide(color: GlobalColors.kColor2, width: 1),
       ),
-      backgroundColor: GlobalColors.kColor2,
+      backgroundColor: Color(0xFF3A3A3D),
       contentPadding: EdgeInsets.all(ScreensHelper.fromWidth(3)),
       children: [
         EpisodeWidget(
@@ -43,24 +43,24 @@ class _BasicDialogState extends State<BasicDialog> {
         text: 'jouer ensuite',
       ),
       ChooseItem(
-        urlIcon: GlobalIcons.favoriteIcon,
-        text: 'jouer ensuite',
+        urlIcon: GlobalIcons.addIcon,
+        text: 'Ajouter à ma playlist',
       ),
       ChooseItem(
         urlIcon: GlobalIcons.favoriteIcon,
-        text: 'jouer ensuite',
+        text: 'Ajouter à mes favoris',
       ),
       ChooseItem(
-        urlIcon: GlobalIcons.playNextIcon,
+        urlIcon: GlobalIcons.upIcon,
         text: 'Partager',
       ),
       ChooseItem(
-        urlIcon: GlobalIcons.albumsIcon,
-        text: 'jouer ensuite',
+        urlIcon: GlobalIcons.downloadIcon,
+        text: 'Télécharger',
       ),
       ChooseItem(
-        urlIcon: GlobalIcons.albums1Icon,
-        text: 'jouer ensuite',
+        urlIcon: GlobalIcons.infoIcon,
+        text: 'Plus d’informations',
       ),
     ];
   }

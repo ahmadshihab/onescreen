@@ -52,6 +52,10 @@ abstract class GlobalIcons {
   static const albums1Icon = "assets/icons/albums1.png";
   static const playNextIcon = "assets/icons/play_next.png";
   static const favoriteIcon = "assets/icons/favorite.png";
+  static const addIcon = "assets/icons/add-icon.png";
+  static const downloadIcon = "assets/icons/download-icon.png";
+  static const infoIcon = "assets/icons/info-icon.png";
+  static const upIcon = "assets/icons/up-icon.png";
 }
 
 abstract class GlobalImages {

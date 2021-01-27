@@ -16,8 +16,7 @@ class SecondPage extends StatefulWidget {
 class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, allowFontScaling: true);
-    ScreensHelper(context);
+
     return Scaffold(
       backgroundColor: GlobalColors.backgroundColor,
       body: SingleChildScrollView(
