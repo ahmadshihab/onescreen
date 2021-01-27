@@ -18,8 +18,8 @@ class _FavoritePageState extends State<FavoritePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: bottomNavigation(),
         backgroundColor: Color(0XFF141414),
+        bottomNavigationBar: BottomNavigator(),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
