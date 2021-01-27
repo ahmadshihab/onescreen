@@ -26,7 +26,7 @@ class _AlbumWidgetState extends State<AlbumWidget> {
             width: ScreensHelper.fromWidth(80),
             height: ScreensHelper.fromHeight(45),
             child: CustomImage.rectangle(
-              image: widget.image ?? 'assets/images/test.png',
+              image: widget.image ?? 'assets/images/red-girl.png',
               isNetworkImage: false,
             ),
           ),
@@ -36,14 +36,14 @@ class _AlbumWidgetState extends State<AlbumWidget> {
           Column(
             children: [
               Text(
-                widget.name ?? 'Professuer Mamadou',
+                widget.name ?? 'Radio Journal',
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
               DefaultGap(
                 count: 1.5,
               ),
               Text(
-                widget.name ?? 'Profess',
+                widget.name ?? 'Avec Daria Diallo',
                 style: TextStyle(color: Colors.grey),
               ),
               DefaultGap(

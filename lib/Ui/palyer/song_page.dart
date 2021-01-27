@@ -18,8 +18,10 @@ class SongPage extends StatefulWidget {
 }
 
 class _SongPageState extends State<SongPage> {
+
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: Scaffold(
         bottomNavigationBar: bottomNavigation(),
