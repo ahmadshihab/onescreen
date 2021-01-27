@@ -50,16 +50,14 @@ class _SecondPageState extends State<SecondPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: ScreensHelper.fromWidth(5)),
-                  child: Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Podcasts',
-                          style: GlobalStyles.baseTitle,
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Podcasts',
+                        style: GlobalStyles.baseTitle,
+                      ),
+                    ],
                   ),
                 ),
                 DefaultGap(),
@@ -78,17 +76,15 @@ class _SecondPageState extends State<SecondPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: ScreensHelper.fromWidth(5)),
-                  child: Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Populaire cette semaine',
-                          style: GlobalStyles.baseTitle
-                              .copyWith(fontSize: ScreenUtil()?.setSp(55)),
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Populaire cette semaine',
+                        style: GlobalStyles.baseTitle
+                            .copyWith(fontSize: ScreenUtil()?.setSp(55)),
+                      ),
+                    ],
                   ),
                 ),
                 Container(
@@ -111,17 +107,15 @@ class _SecondPageState extends State<SecondPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: ScreensHelper.fromWidth(5)),
-                  child: Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Nouveautes',
-                          style: GlobalStyles.baseTitle
-                              .copyWith(fontSize: ScreenUtil()?.setSp(55)),
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Nouveautes',
+                        style: GlobalStyles.baseTitle
+                            .copyWith(fontSize: ScreenUtil()?.setSp(55)),
+                      ),
+                    ],
                   ),
                 ),
                 ListView.builder(
@@ -142,17 +136,15 @@ class _SecondPageState extends State<SecondPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: ScreensHelper.fromWidth(5)),
-                  child: Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'PodCasteurs',
-                          style: GlobalStyles.baseTitle
-                              .copyWith(fontSize: ScreenUtil()?.setSp(55)),
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'PodCasteurs',
+                        style: GlobalStyles.baseTitle
+                            .copyWith(fontSize: ScreenUtil()?.setSp(55)),
+                      ),
+                    ],
                   ),
                 ),
                 Container(
