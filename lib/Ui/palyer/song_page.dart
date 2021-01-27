@@ -22,8 +22,8 @@ class _SongPageState extends State<SongPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: bottomNavigation(),
         backgroundColor: Colors.black,
+        bottomNavigationBar: BottomNavigator(),
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           backgroundColor: Colors.transparent,

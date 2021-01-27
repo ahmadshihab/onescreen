@@ -16,8 +16,8 @@ class _FilteredPageState extends State<FilteredPage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      bottomNavigationBar: bottomNavigation(),
       backgroundColor: Colors.black,
+      bottomNavigationBar: BottomNavigator(),
       appBar: AppBar(
         backgroundColor: Colors.black,
         elevation: 5,

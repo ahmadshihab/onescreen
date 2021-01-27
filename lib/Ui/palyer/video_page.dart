@@ -1,7 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rjs/Ui/Emissions/emissions_page.dart';
 import 'package:rjs/Ui/common_widget/app_navigator.dart';
+
 import 'package:rjs/Ui/common_widget/select_option_row.dart';
+import 'package:rjs/Ui/favorite/page/favorite_page.dart';
+import 'package:rjs/Ui/filtered/filtered_page.dart';
+import 'package:rjs/Ui/palyer/song_page.dart';
 import 'package:rjs/app/app.dart';
 import 'package:rjs/core/Util.dart';
 import 'package:rjs/core/custom_dimensions.dart';
@@ -18,13 +23,11 @@ class VideoPage extends StatefulWidget {
 }
 
 class _VideoPageState extends State<VideoPage> {
-  int _selectedIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: bottomNavigation(),
+        bottomNavigationBar: BottomNavigator(),
         backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.black,

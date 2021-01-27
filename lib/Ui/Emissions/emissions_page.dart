@@ -17,7 +17,7 @@ class _EmissionPageState extends State<EmissionPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0XFF141414),
-        bottomNavigationBar: bottomNavigation(),
+        bottomNavigationBar: BottomNavigator(),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +72,7 @@ class _EmissionPageState extends State<EmissionPage> {
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
-                  similarList(context),
+                  similarsList(context),
                   Padding(
                     padding: EdgeInsets.only(
                       left: CustomDimensions(context).blockSizeHorizontal * 3,
@@ -158,7 +158,7 @@ class _EmissionPageState extends State<EmissionPage> {
   }
 }
 
-Widget similarList(BuildContext ctx) {
+Widget similarsList(BuildContext ctx) {
   return Container(
     padding: EdgeInsets.symmetric(
       // vertical: CustomDimensions(ctx).blockSizeVertical * 0.45,
