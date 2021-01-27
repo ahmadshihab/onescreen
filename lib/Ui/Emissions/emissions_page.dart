@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rjs/Ui/common_widget/app_navigator.dart';
 import 'package:rjs/Ui/common_widget/favorite_item.dart';
 import 'package:rjs/Ui/common_widget/radio_topBar.dart';
 import 'package:rjs/core/Util.dart';
@@ -16,6 +17,7 @@ class _EmissionPageState extends State<EmissionPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0XFF141414),
+        bottomNavigationBar: bottomNavigation(),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rjs/Ui/common_widget/app_navigator.dart';
 import 'package:rjs/Ui/common_widget/favorite_item.dart';
 import 'package:rjs/Ui/common_widget/radio_topBar.dart';
 import 'package:rjs/app/app.dart';
@@ -17,6 +18,7 @@ class _FavoritePageState extends State<FavoritePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        bottomNavigationBar: bottomNavigation(),
         backgroundColor: Color(0XFF141414),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

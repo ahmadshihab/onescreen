@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rjs/Ui/common_widget/app_navigator.dart';
 import 'package:rjs/Ui/common_widget/select_option_row.dart';
 import 'package:rjs/app/app.dart';
 import 'package:rjs/core/Util.dart';
@@ -255,34 +256,6 @@ Widget viewsRow(BuildContext ctx) {
           ],
         ),
       ),
-    ],
-  );
-}
-
-Widget bottomNavigation() {
-  return BottomNavigationBar(
-    onTap: (int index) {},
-    items: <BottomNavigationBarItem>[
-      BottomNavigationBarItem(
-          icon: Image.asset('assets/images/home.png'),
-          backgroundColor: BlueColor,
-          title: Text('')),
-      BottomNavigationBarItem(
-          icon: Image.asset('assets/images/radioicon.png'),
-          backgroundColor: BlueColor,
-          title: Text('')),
-      BottomNavigationBarItem(
-          icon: Image.asset('assets/images/video2.png'),
-          backgroundColor: BlueColor,
-          title: Text('')),
-      BottomNavigationBarItem(
-          icon: Image.asset('assets/images/heart.png'),
-          backgroundColor: BlueColor,
-          title: Text('')),
-      BottomNavigationBarItem(
-          icon: Image.asset('assets/images/menu.png'),
-          backgroundColor: BlueColor,
-          title: Text('')),
     ],
   );
 }

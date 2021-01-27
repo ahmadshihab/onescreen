@@ -28,7 +28,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
-  carousel_slider: ^2.2.1
+
   get_it: ^5.0.1
   dio: ^3.0.10
   flutter_bloc: ^4.0.1
@@ -36,6 +36,17 @@ dependencies:
   floor: ^0.14.0
   rxdart: ^0.24.1
   persistent_bottom_nav_bar: ^3.1.0
+  carousel_slider: ^2.2.1
+  cached_network_image: ^2.0.0
+
+  flutter_audio_query: ^0.3.5+6
+  just_audio: ^0.4.4
+  flutter_screenutil: ^1.1.0
+  flutter_svg: ^0.19.2+1
+
+
+
+
 
 
 dev_dependencies:

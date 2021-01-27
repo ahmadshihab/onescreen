@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rjs/Ui/common_widget/app_navigator.dart';
 import 'package:rjs/Ui/common_widget/select_option_row.dart';
 import 'package:rjs/core/Util.dart';
 import 'package:rjs/core/custom_dimensions.dart';
@@ -15,6 +16,7 @@ class _FilteredPageState extends State<FilteredPage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      bottomNavigationBar: bottomNavigation(),
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
