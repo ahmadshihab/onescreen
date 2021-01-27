@@ -22,16 +22,17 @@ class _PlayingSongPageState extends State<PlayingSongPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: ScreensHelper.fromHeight(100),
+          height: ScreensHelper.fromHeight(100),
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [Color(0xff383838), Color(0xff000000)],
-                  begin: const FractionalOffset(0.0, 0.0),
-                  end: const FractionalOffset(0.5, 0.0),
                   stops: [0.0, 1.0],
-                  tileMode: TileMode.clamp)),
+                  begin: FractionalOffset.topCenter,
+                  end: FractionalOffset.bottomCenter,
+                  tileMode: TileMode.repeated)),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: ScreensHelper.fromWidth(3)),
+            padding:
+                EdgeInsets.symmetric(horizontal: ScreensHelper.fromWidth(3)),
             child: SingleChildScrollView(
               child: Container(
                 margin: EdgeInsets.fromLTRB(5, 57, 5, 0),
