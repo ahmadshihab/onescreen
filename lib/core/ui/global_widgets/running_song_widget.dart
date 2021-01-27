@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
+import 'package:rjs/Ui/playing_song_page/page/playing_song_page.dart';
 import 'package:rjs/core/utils/images_util/custom_image.dart';
 import 'package:rjs/core/utils/screen_utils/screen_utils.dart';
 
 import '../../resources.dart';
 
 class RunningSongWidget extends StatelessWidget {
+  final VoidCallback callback;
+
+  RunningSongWidget({this.callback});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -59,10 +64,15 @@ class RunningSongWidget extends StatelessWidget {
                         color: Colors.redAccent,
                         ),
                     DefaultGap(isWidth: true, count: 2,),
-                    Icon(
-                      Icons.keyboard_arrow_up,
-                      size: ScreensHelper.fromWidth(5),
-                      color: Colors.white,
+                    InkWell(
+                      onTap: (){
+                       callback();
+                      },
+                      child: Icon(
+                        Icons.keyboard_arrow_up,
+                        size: ScreensHelper.fromWidth(5),
+                        color: Colors.white,
+                      ),
                     )
                   ],
                 )

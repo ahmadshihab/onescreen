@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rjs/Ui/main_home_screen/main_home_screen.dart';
 import 'package:rjs/core/Util.dart';
 import 'package:rjs/core/custom_dimensions.dart';
 import 'package:rjs/core/style/base_colors.dart';
@@ -39,19 +40,26 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: TextDecoration.underline),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: CustomDimensions(context).width * 0.05,
-                  vertical: CustomDimensions(context).width * 0.04,
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (ctx){
+                    return MainScreen();
+                  }));
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: CustomDimensions(context).width * 0.05,
+                    vertical: CustomDimensions(context).width * 0.04,
+                  ),
+                  child: customContainer(
+                      CustomDimensions(context).width,
+                      CustomDimensions(context).height * 0.07,
+                      12,
+                      BlueColor,
+                      Center(
+                        child: customText('Connexion', 18, true),
+                      )),
                 ),
-                child: customContainer(
-                    CustomDimensions(context).width,
-                    CustomDimensions(context).height * 0.07,
-                    12,
-                    BlueColor,
-                    Center(
-                      child: customText('Connexion', 18, true),
-                    )),
               ),
               SizedBox(
                 height: CustomDimensions(context).height * 0.15,

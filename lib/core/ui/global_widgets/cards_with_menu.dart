@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rjs/core/utils/screen_utils/screen_utils.dart';
 
 class CardsWithMenu extends StatelessWidget {
   final String imgurl;
@@ -43,12 +44,17 @@ class CardsWithMenu extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    text ?? 'La nuit du droit',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontFamily: 'medium',
-                      color: Colors.white,
+                  Container(
+                    width:ScreensHelper.fromWidth(30),
+                    child: Text(
+                      text ?? 'La nuit du droit',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontFamily: 'medium',
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   Image.asset('assets/images/more.png')

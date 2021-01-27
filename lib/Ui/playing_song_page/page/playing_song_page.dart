@@ -25,7 +25,7 @@ class _PlayingSongPageState extends State<PlayingSongPage> {
         height: ScreensHelper.fromHeight(100),
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Colors.black45, Colors.black54],
+                  colors: [Color(0xff383838), Color(0xff000000)],
                   begin: const FractionalOffset(0.0, 0.0),
                   end: const FractionalOffset(0.5, 0.0),
                   stops: [0.0, 1.0],
