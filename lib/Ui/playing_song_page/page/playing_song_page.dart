@@ -105,7 +105,7 @@ class _PlayingSongPageState extends State<PlayingSongPage> {
                     width: ScreensHelper.fromWidth(40),
                     child: BasicButton(
                       onPressed: () {},
-                      text: 'Reagir',
+                      text: 'Réagir',
                     ),
                   )
                 ]),

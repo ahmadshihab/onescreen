@@ -12,27 +12,29 @@ class CardsWithMenu extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            Container(
-                width: 151,
-                height: 151,
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      imgurl ?? 'assets/images/droit.png',
-                    ),
-                    Positioned(
-                        bottom: 20,
-                        child: Padding(
-                            padding: EdgeInsets.all(8),
-                            child: Image.asset('assets/images/wave2.png')))
-                  ],
-                )),
-            Container(
-              width: 10,
-            )
-          ],
+        SingleChildScrollView(
+          child: Row(
+            children: [
+              Container(
+                  width: 151,
+                  height: 151,
+                  child: Stack(
+                    children: [
+                      Image.asset(
+                        imgurl ?? 'assets/images/droit.png',
+                      ),
+                      Positioned(
+                          bottom: 20,
+                          child: Padding(
+                              padding: EdgeInsets.all(8),
+                              child: Image.asset('assets/images/wave2.png')))
+                    ],
+                  )),
+              Container(
+                width: 10,
+              )
+            ],
+          ),
         ),
         Container(
           width: 151,

@@ -25,16 +25,9 @@ class HeaderWidget extends StatelessWidget {
           ),
           Row(
             children: [
-              Icon(
-                Icons.view_stream_outlined,
-                size: ScreensHelper.fromWidth(10),
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.upgrade_outlined,
-                size: ScreensHelper.fromWidth(10),
-                color: Colors.white,
-              ),
+              Image.asset('assets/images/wifi.png'),
+              SizedBox(width: 20,),
+              Image.asset('assets/images/up-arrow.png'),
             ],
           )
         ],

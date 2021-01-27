@@ -14,6 +14,8 @@ class EmissionPage extends StatefulWidget {
 class _EmissionPageState extends State<EmissionPage> {
   @override
   Widget build(BuildContext context) {
+
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0XFF141414),
