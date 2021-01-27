@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rjs/Ui/Auth/Pages/login_page.dart';
+import 'package:rjs/Ui/Auth/Pages/register_page.dart';
 import 'package:rjs/core/Util.dart';
 import 'package:rjs/core/custom_dimensions.dart';
 
@@ -81,7 +83,11 @@ class _StartPageState extends State<StartPage> {
                     height: CustomDimensions(context).height * 0.06,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder:(ctx) {
+                        return LoginPage();
+                      }));
+                    },
                     child: Container(
                       width: CustomDimensions(context).width * 0.85,
                       height: CustomDimensions(context).height * 0.06,
@@ -104,7 +110,9 @@ class _StartPageState extends State<StartPage> {
                       customText('Vous avez déjà un compte ?', 13, false),
                       GestureDetector(
                         onTap: () {
-
+                          Navigator.push(context, MaterialPageRoute(builder: (ctx){
+                            return RegisterPage();
+                          }));
                         },
                         child: customText('Connectez-vous', 14, true),
                       ),

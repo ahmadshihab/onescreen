@@ -98,7 +98,15 @@ class _SecondPageState extends State<SecondPage> {
                         itemCount: 6,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
-                          return index == 0 ? CardsWithMenu(text: 'Le monde selon Mamadou', imgurl: 'assets/images/pic1.png',) : CardsWithMenu(text: 'Docteur Sarah', imgurl: 'assets/images/pic2.png',);
+                          return index == 0
+                              ? CardsWithMenu(
+                                  text: 'Le monde selon Mamadou',
+                                  imgurl: 'assets/images/pic1.png',
+                                )
+                              : CardsWithMenu(
+                                  text: 'Docteur Sarah',
+                                  imgurl: 'assets/images/pic2.png',
+                                );
                         })),
                 Padding(
                   padding: EdgeInsets.symmetric(
@@ -121,7 +129,15 @@ class _SecondPageState extends State<SecondPage> {
                     shrinkWrap: true,
                     itemCount: 3,
                     itemBuilder: (context, index) {
-                      return index == 0 ? HorizantalWithMenu(img: 'assets/images/pic5.png',) : index == 1 ? HorizantalWithMenu(img: 'assets/images/pic6.png') : HorizantalWithMenu(img: 'assets/images/pic7.png');
+                      return index == 0
+                          ? HorizantalWithMenu(
+                              img: 'assets/images/pic5.png',
+                            )
+                          : index == 1
+                              ? HorizantalWithMenu(
+                                  img: 'assets/images/pic6.png')
+                              : HorizantalWithMenu(
+                                  img: 'assets/images/pic7.png');
                     }),
                 Padding(
                   padding: EdgeInsets.symmetric(
@@ -146,9 +162,15 @@ class _SecondPageState extends State<SecondPage> {
                         itemCount: 6,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
-                          return index == 0 ? PodCasterWidget(image: 'assets/images/pic3.png') : PodCasterWidget(image: 'assets/images/pic4.png',);
+                          return index == 0
+                              ? PodCasterWidget(image: 'assets/images/pic3.png')
+                              : PodCasterWidget(
+                                  image: 'assets/images/pic4.png',
+                                );
                         })),
-                DefaultGap(count: 20,),
+                DefaultGap(
+                  count: 20,
+                ),
               ],
             ),
           ),

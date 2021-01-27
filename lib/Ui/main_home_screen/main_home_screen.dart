@@ -9,6 +9,7 @@ import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:rjs/Ui/favorite/page/favorite_page.dart';
 import 'package:rjs/Ui/filtered/filtered_page.dart';
 import 'package:rjs/Ui/home_page/Page/HomePage.dart';
+import 'package:rjs/Ui/playing_song_page/page/playing_song_page.dart';
 import 'package:rjs/Ui/second_page/page/second_page.dart';
 import 'package:rjs/core/ui/global_widgets/running_song_widget.dart';
 import 'package:rjs/core/utils/screen_utils/screen_utils.dart';
@@ -285,7 +286,11 @@ class _MainScreenState extends State<MainScreen> {
             child: Stack(
               children: [
                 _buildScreens[_currentIndex],
-                Positioned(bottom: 0,child: RunningSongWidget())
+                Positioned(bottom: 0,child: RunningSongWidget(callback: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (ctx){
+                    return PlayingSongPage();
+                  }));
+                },))
               ],
             )
           )),
