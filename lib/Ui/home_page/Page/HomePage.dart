@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:rjs/Ui/playing_song_page/page/playing_song_page.dart';
+import 'package:rjs/core/ui/dialogs/basic_dialog.dart';
 
 import 'data_model_story.dart';
 
@@ -160,11 +162,18 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-              Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Stack(
-                    children: [Image.asset('assets/images/set.png')],
-                  )),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+                    return PlayingSongPage();
+                  }));
+                },
+                child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Stack(
+                      children: [Image.asset('assets/images/set.png')],
+                    )),
+              ),
               Padding(
                   padding: EdgeInsets.all(10),
                   child: Row(
@@ -678,55 +687,60 @@ class _HomePageState extends State<HomePage> {
                         itemCount: 6,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
-                          return Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                      width: 151,
-                                      height: 151,
-                                      child: Stack(
+                          return InkWell(
+                            onTap: () {
+                              _showDialog();
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                        width: 151,
+                                        height: 151,
+                                        child: Stack(
+                                          children: [
+                                            Image.asset(
+                                              'assets/images/droit.png',
+                                            ),
+                                            Positioned(
+                                                bottom: 20,
+                                                child: Padding(
+                                                    padding: EdgeInsets.all(8),
+                                                    child: Image.asset(
+                                                        'assets/images/wave2.png')))
+                                          ],
+                                        )),
+                                    Container(
+                                      width: 10,
+                                    )
+                                  ],
+                                ),
+                                Container(
+                                  width: 151,
+                                  child: Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 5, right: 5, top: 5),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Image.asset(
-                                            'assets/images/droit.png',
+                                          Text(
+                                            'La nuit du droit',
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              fontFamily: 'medium',
+                                              color: Colors.white,
+                                            ),
                                           ),
-                                          Positioned(
-                                              bottom: 20,
-                                              child: Padding(
-                                                  padding: EdgeInsets.all(8),
-                                                  child: Image.asset(
-                                                      'assets/images/wave2.png')))
+                                          Image.asset('assets/images/more.png')
                                         ],
                                       )),
-                                  Container(
-                                    width: 10,
-                                  )
-                                ],
-                              ),
-                              Container(
-                                width: 151,
-                                child: Padding(
-                                    padding: EdgeInsets.only(
-                                        left: 5, right: 5, top: 5),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          'La nuit du droit',
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: 'medium',
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        Image.asset('assets/images/more.png')
-                                      ],
-                                    )),
-                              )
-                            ],
+                                )
+                              ],
+                            ),
                           );
                         })),
               ),
@@ -817,5 +831,14 @@ class _HomePageState extends State<HomePage> {
             ],
           )),
         ));
+  }
+
+  void _showDialog() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return BasicDialog();
+      },
+    );
   }
 }

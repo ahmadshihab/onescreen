@@ -3,9 +3,13 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:rjs/Ui/home_page/Page/HomePage.dart';
+import 'package:rjs/Ui/second_page/page/second_page.dart';
+import 'package:rjs/core/ui/global_widgets/running_song_widget.dart';
+import 'package:rjs/core/utils/screen_utils/screen_utils.dart';
 
 class MainScreen extends StatefulWidget {
   int select;
@@ -23,7 +27,7 @@ class _MainScreenState extends State<MainScreen> {
 
   List<Widget> _buildScreens = [
     HomePage(),
-    Container(),
+    SecondPage(),
     Container(),
     Container(),
     Container(),
@@ -107,6 +111,10 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     final sizeAware = MediaQuery.of(context).size;
+
+    ScreenUtil.init(context, allowFontScaling: true);
+    ScreensHelper(context);
+
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.white,
@@ -272,7 +280,12 @@ class _MainScreenState extends State<MainScreen> {
             onWillPop: () async {
               SystemChannels.platform.invokeMethod('SystemNavigator.pop');
             },
-            child: _buildScreens[_currentIndex],
+            child: Stack(
+              children: [
+                _buildScreens[_currentIndex],
+                Positioned(bottom: 0,child: RunningSongWidget())
+              ],
+            )
           )),
     );
   }

@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rjs/Ui/Auth/Pages/register_page.dart';
-import 'package:rjs/Ui/Emissions/emissions_page.dart';
-
-import 'package:rjs/Ui/favorite/page/favorite_page.dart';
-import 'package:rjs/Ui/filtered/filtered_page.dart';
 import 'package:rjs/Ui/main_home_screen/main_home_screen.dart';
-import 'package:rjs/Ui/palyer/song_page.dart';
-import 'package:rjs/Ui/palyer/video_page.dart';
 
 class App extends StatelessWidget {
   // This widget is the root of your application.
@@ -16,7 +10,6 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        fontFamily: 'Montserrat',
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -32,7 +25,7 @@ class App extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: FilteredPage(),
+      home: RegisterPage(),
     );
   }
 }

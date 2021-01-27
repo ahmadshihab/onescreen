@@ -9,65 +9,121 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-
-  TextEditingController  name=TextEditingController();
-  TextEditingController  phone=TextEditingController();
-  TextEditingController  email=TextEditingController();
-  TextEditingController  password=TextEditingController();
+  TextEditingController name = TextEditingController();
+  TextEditingController phone = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+  String paymentMethod;
 
   @override
   Widget build(BuildContext context) {
-      return SafeArea(
-        child: Scaffold(
-          backgroundColor: Color(0xFF0B0B0B),
-          appBar: AppBar(
-            backgroundColor: Color(0xFF0B0B0B),
-            elevation: 0,
-            bottom: PreferredSize(
-              preferredSize: Size.fromHeight(CustomDimensions(context).height * 0.05),
-              child: customText('S’inscrire', 26.0, true),
-            ),
-            centerTitle: true,
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                 Container(
-                  padding: EdgeInsets.symmetric(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xFF0B0B0B),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                  padding: EdgeInsets.only(top: 50),
+                  child: customText('S’inscrire', 26.0, true)
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  right: CustomDimensions(context).width * 0.05,
+                  left: CustomDimensions(context).width * 0.05,
+                  top: CustomDimensions(context).width * 0.05,
+                ),
+                child: Column(
+                  children: [
+                    Align(
+                        alignment: Alignment.topLeft,
+                        child: customText('Pays', 16, false)),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    customContainer(
+                        CustomDimensions(context).width,
+                        CustomDimensions(context).height * 0.07,
+                        12,
+                        Color(0xFF222222).withOpacity(0.76),
+                        DropdownButtonHideUnderline(
+                          child: DropdownButton<String>(
+                            items: <String>['paypal'].map((String value) {
+                              return new DropdownMenuItem<String>(
+                                value: value,
+                                child: Padding(
+                                    padding: EdgeInsets.only(left: 20),
+                                    child: Text(value)),
+                              );
+                            }).toList(),
+                            onChanged: (String value) {
+                              this.paymentMethod = value;
+                            },
+                            icon: Container(
+                              margin: EdgeInsets.only(right: 20),
+                              child: Transform.rotate(
+                                angle: 90 * 3.14 / 180,
+                                child: Icon(
+                                  Icons.arrow_forward_ios,
+                                ),
+                              ),
+                            ),
+                            value: paymentMethod,
+                            dropdownColor: Color(0xFF222222).withOpacity(0.76),
+                            style: TextStyle(
+                              color: WhiteColor,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ))
+                  ],
+                ),
+              ),
+              buildItem('Nom et prénom(s)', name),
+              buildItem('Numéro de téléphone', phone),
+              buildItem('Adresse email', email),
+              buildItem('Mot de passe', password),
+              Container(
+                padding: EdgeInsets.symmetric(
                   horizontal: CustomDimensions(context).width * 0.05,
                   vertical: CustomDimensions(context).width * 0.04,
-                  ),
-                  child: Column(
-                    children: [
-                       Align(
-                        alignment: Alignment.topLeft,
-                        child: customText('Pays', 16 , false)
-                       ),
-                      SizedBox(height: 10,),
+                ),
+                child: customContainer(
+                    CustomDimensions(context).width,
+                    CustomDimensions(context).height * 0.07,
+                    12,
+                    BlueColor,
+                    Center(
+                      child: customText('S’inscrire', 18, true),
+                    )),
+              ),
+              SizedBox(
+                height: CustomDimensions(context).height * 0.1,
+              ),
+              customText(
+                  'En cliquant sur «S’inscrire», vous acceptez nos', 16, false),
+              GestureDetector(
+                onTap: () {
 
-                    ],
-                  ),
+                },
+                child: Text(
+                  'Termes et conditions d’utilisation',
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: WhiteColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      decoration: TextDecoration.underline),
                 ),
-                buildItem('Nom et prénom(s)' , name),
-                buildItem('Numéro de téléphone' , phone),
-                buildItem('Adresse email' , email),
-                buildItem('Mot de passe' , password),
-                Container(
-                    padding: EdgeInsets.symmetric(
-                    horizontal: CustomDimensions(context).width * 0.05,
-                    vertical: CustomDimensions(context).width * 0.04,
-                  ),
-                  child: customContainer(CustomDimensions(context).width, CustomDimensions(context).height * 0.07, 12, BlueColor,
-                      Center(
-                        child: customText('S’inscrire', 18, true),
-                      )
-                  ),
-                ),
-              ],
-            ),
+              ),
+              SizedBox(
+                height: CustomDimensions(context).height * 0.1,
+              )
+            ],
           ),
         ),
-      );
+      ),
+    );
   }
 
   Widget buildItem(String s, TextEditingController field) {
@@ -78,21 +134,23 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
       child: Column(
         children: [
-          Align(
-              alignment: Alignment.topLeft,
-              child: customText(s, 16 , false)
+          Align(alignment: Alignment.topLeft, child: customText(s, 16, false)),
+          SizedBox(
+            height: 10,
           ),
-          SizedBox(height: 10,),
-          customContainer(CustomDimensions(context).width, CustomDimensions(context).height * 0.07, 12, Color(0xFF222222).withOpacity(0.76), TextFormField(
-            style: TextStyle(
-              color: WhiteColor
-            ),
-            controller: field,
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(left: 20),
-            ),
-          ))
+          customContainer(
+              CustomDimensions(context).width,
+              CustomDimensions(context).height * 0.07,
+              12,
+              Color(0xFF222222).withOpacity(0.76),
+              TextFormField(
+                style: TextStyle(color: WhiteColor),
+                controller: field,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(left: 20),
+                ),
+              ))
         ],
       ),
     );
