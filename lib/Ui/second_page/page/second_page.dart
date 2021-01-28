@@ -173,6 +173,7 @@ class _SecondPageState extends State<SecondPage> {
 
   _getSearchBar() {
     return TextFormField(
+      style: TextStyle(color: Colors.white),
       textInputAction: TextInputAction.search,
       keyboardType: TextInputType.text,
       onTap: () {},

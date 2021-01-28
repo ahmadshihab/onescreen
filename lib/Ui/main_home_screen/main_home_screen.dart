@@ -33,7 +33,9 @@ class _MainScreenState extends State<MainScreen> {
     SecondPage(),
     FilteredPage(),
     FavoritePage(),
-    Container(),
+    Scaffold(
+      backgroundColor: Color(0xFF141414),
+    ),
   ];
 
   int _currentIndex = 0;
@@ -286,11 +288,11 @@ class _MainScreenState extends State<MainScreen> {
             child: Stack(
               children: [
                 _buildScreens[_currentIndex],
-                Positioned(bottom: 0,child: RunningSongWidget(callback: (){
+                /*Positioned(bottom: 0,child: RunningSongWidget(callback: (){
                   Navigator.push(context, MaterialPageRoute(builder: (ctx){
                     return PlayingSongPage();
                   }));
-                },))
+                },))*/
               ],
             )
           )),

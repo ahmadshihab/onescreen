@@ -215,7 +215,7 @@ class _VideoPageState extends State<VideoPage> {
                     ],
                   ),
                 ),
-                customText('Similaires', 20, true),
+                customText('Similaires', 18, true),
                 similarList(context),
               ],
             ),

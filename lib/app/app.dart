@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rjs/Ui/Emissions/emissions_page.dart';
+import 'package:rjs/Ui/palyer/song_page.dart';
 import 'package:rjs/Ui/start_page/start_page.dart';
 
 class App extends StatelessWidget {

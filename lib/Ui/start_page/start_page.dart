@@ -6,6 +6,9 @@ import 'package:rjs/Ui/main_home_screen/main_home_screen.dart';
 import 'package:rjs/core/Util.dart';
 import 'package:rjs/core/custom_dimensions.dart';
 import 'package:rjs/core/utils/screen_utils/screen_utils.dart';
+import 'package:rjs/Ui/Emissions/emissions_page.dart';
+import 'package:rjs/Ui/palyer/song_page.dart';
+import 'package:rjs/Ui/palyer/video_page.dart';
 
 class StartPage extends StatefulWidget {
   @override
@@ -39,10 +42,12 @@ class _StartPageState extends State<StartPage> {
                         top: CustomDimensions(context).height * 0.16),
                     child: InkWell(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (ctx) => MainScreen()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => MainScreen()));
                         },
-                        child: Image.asset('assets/images/bigradio.png')
-                    ),
+                        child: Image.asset('assets/images/bigradio.png')),
                   ),
                   SizedBox(
                     height: 10,
@@ -52,27 +57,38 @@ class _StartPageState extends State<StartPage> {
                   SizedBox(height: CustomDimensions(context).height * 0.12),
                   GestureDetector(
                       onTap: () {},
-                      child: customContainer(
-                          CustomDimensions(context).width * 0.85,
-                          CustomDimensions(context).height * 0.06,
-                          20,
-                          Color(0xFF4267B2),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Image.asset('assets/images/facebook.png'),
-                              customText('Connexion avec mon compte facebook',
-                                  12, false)
-                            ],
-                          ))),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => EmissionPage()));
+                        },
+                        child: customContainer(
+                            CustomDimensions(context).width * 0.85,
+                            CustomDimensions(context).height * 0.055,
+                            20,
+                            Color(0xFF4267B2),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Image.asset('assets/images/facebook.png'),
+                                customText('Connexion avec mon compte facebook',
+                                    12, false)
+                              ],
+                            )),
+                      )),
                   SizedBox(
                     height: CustomDimensions(context).height * 0.03,
                   ),
                   GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (ctx) => SongPage()));
+                      },
                       child: customContainer(
                           CustomDimensions(context).width * 0.85,
-                          CustomDimensions(context).height * 0.06,
+                          CustomDimensions(context).height * 0.055,
                           20,
                           Colors.white,
                           Row(
@@ -90,11 +106,11 @@ class _StartPageState extends State<StartPage> {
                             ],
                           ))),
                   SizedBox(
-                    height: CustomDimensions(context).height * 0.06,
+                    height: CustomDimensions(context).height * 0.055,
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder:(ctx) {
+                      Navigator.push(context, MaterialPageRoute(builder: (ctx) {
                         return LoginPage();
                       }));
                     },
@@ -117,10 +133,18 @@ class _StartPageState extends State<StartPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      customText('Vous avez déjà un compte ?', 13, false),
+                      Text(
+                        'Vous avez déjà un compte ?',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          color: Colors.white.withOpacity(0.7),
+                          fontSize: 13,
+                        ),
+                      ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (ctx){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (ctx) {
                             return RegisterPage();
                           }));
                         },
@@ -128,33 +152,56 @@ class _StartPageState extends State<StartPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Center(
-                    child: Text(
-                      'Conditions d’utilisation',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        color: Colors.white,
-                        fontSize: 11,
-                        decoration: TextDecoration.underline,
-                        fontWeight: FontWeight.w600,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (ctx) => VideoPage()));
+                      },
+                      child: Text(
+                        'Conditions d’utilisation',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          color: Colors.white,
+                          fontSize: 11,
+                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.normal,
+                        ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 6,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      customText('Partenaires', 10, false),
-                      SizedBox(width: 20,),
+                      Text(
+                        'Partenaires',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
                       Image.asset('assets/images/flag1.png'),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Image.asset('assets/images/flag2.png'),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Image.asset('assets/images/flag3.png'),
                     ],
                   ),
-                  SizedBox(height: CustomDimensions(context).height * 0.2,)
                 ],
               ),
             ),

@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:rjs/Ui/common_widget/app_navigator.dart';
 import 'package:rjs/Ui/common_widget/select_option_row.dart';
 import 'package:rjs/app/app.dart';
 import 'package:rjs/core/Util.dart';
 import 'package:rjs/core/custom_dimensions.dart';
 import 'package:rjs/core/style/base_colors.dart';
+import 'package:rjs/core/utils/screen_utils/screen_utils.dart';
 
 import 'local/date_time.dart';
 import 'local/languageRow.dart';
@@ -21,7 +23,8 @@ class _SongPageState extends State<SongPage> {
 
   @override
   Widget build(BuildContext context) {
-
+    ScreenUtil.init(context, allowFontScaling: true);
+    ScreensHelper(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
@@ -231,7 +234,7 @@ Widget topSection(BuildContext context) {
           width: CustomDimensions(context).width,
         ),
         Align(
-          alignment: Alignment.bottomCenter,
+          alignment: Alignment.bottomLeft,
           child: Container(
             height: CustomDimensions(context).height * 0.18,
             color: Colors.black,
@@ -248,24 +251,28 @@ Widget topSection(BuildContext context) {
                         style: TextStyle(color: Colors.white),
                       ),
                       customText('Je t’emmène \nen voyage', 29, true),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.remove_red_eye_outlined,
-                            color: GreyAccent,
-                            size: 9,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: CustomDimensions(context)
-                                        .blockSizeHorizontal *
-                                    2),
-                            child: Text(
-                              '2231',
-                              style: TextStyle(color: GreyAccent, fontSize: 9),
+                      Container(
+                        color: BlackColor,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.remove_red_eye_outlined,
+                              color: GreyAccent,
+                              size: 9,
                             ),
-                          )
-                        ],
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: CustomDimensions(context)
+                                          .blockSizeHorizontal *
+                                      2),
+                              child: Text(
+                                '2231',
+                                style: TextStyle(color: GreyAccent, fontSize: 9),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ],
                   ),

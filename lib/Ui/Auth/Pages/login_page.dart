@@ -18,12 +18,15 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color(0xFF0B0B0B),
+        ),
         backgroundColor: Color(0xFF0B0B0B),
         body: SingleChildScrollView(
           child: Column(
             children: [
               Padding(
-                  padding: EdgeInsets.only(top: 50, bottom: 25),
+                  padding: EdgeInsets.only(top: 5, bottom: 25),
                   child: customText('Se connecter', 26.0, true)),
               buildItem('Adresse email', email, Container()),
               buildItem('Mot de passe', password,
@@ -37,12 +40,13 @@ class _LoginPageState extends State<LoginPage> {
                       fontFamily: 'Montserrat',
                       color: WhiteColor,
                       fontSize: 13,
+                      fontWeight: FontWeight.w700,
                       decoration: TextDecoration.underline),
                 ),
               ),
               InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (ctx){
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (ctx) {
                     return MainScreen();
                   }));
                 },
@@ -125,7 +129,18 @@ class _LoginPageState extends State<LoginPage> {
       ),
       child: Column(
         children: [
-          Align(alignment: Alignment.topLeft, child: customText(s, 16, false)),
+          Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                s,
+                textAlign: TextAlign.right,
+                style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    color: WhiteColor,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w700,
+                ),
+              )),
           SizedBox(
             height: 10,
           ),

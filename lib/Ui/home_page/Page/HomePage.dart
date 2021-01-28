@@ -653,7 +653,7 @@ class _HomePageState extends State<HomePage> {
                         'À ne pas manquer',
                         style: TextStyle(
                             fontFamily: 'semibold',
-                            fontSize: 20,
+                            fontSize: 17,
                             color: Colors.white),
                       ),
                       Row(
@@ -753,7 +753,7 @@ class _HomePageState extends State<HomePage> {
                         'Explorez',
                         style: TextStyle(
                             fontFamily: 'semibold',
-                            fontSize: 20,
+                            fontSize: 18,
                             color: Colors.white),
                       ),
                       Row(
