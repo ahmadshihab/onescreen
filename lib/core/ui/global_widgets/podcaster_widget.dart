@@ -15,49 +15,44 @@ class PodCasterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: ScreensHelper.fromWidth(2.5)),
-      child: Column(
-        children: [
-          Container(
-            width: ScreensHelper.fromWidth(35),
-            height: ScreensHelper.fromHeight(17),
-            child: CustomImage.circular(
-              radius: ScreensHelper.fromWidth(50),
-              image: image ?? 'assets/images/test.png',
-              isNetworkImage: false,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: ScreensHelper.fromWidth(35.5),
+              height: ScreensHelper.fromHeight(18),
+              child: CustomImage.circular(
+                radius: ScreensHelper.fromWidth(50),
+                image: image ?? 'assets/images/test.png',
+                isNetworkImage: false,
+              ),
             ),
-          ),
-          DefaultGap(
-            count: 2,
-          ),
-          Column(
-            children: [
-              Text(
-                name ?? 'Professuer Mamadou',
-                style: TextStyle(color: Colors.white),
-              ),
-              DefaultGap(
-                count: 1.5,
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.favorite,
-                    size: ScreensHelper.fromWidth(3),
-                    color: GlobalColors.grayColor,
-                  ),
-                  DefaultGap(
-                    isWidth: true,
-                    count: 1,
-                  ),
-                  Text(
-                    favNum ?? '15 856',
-                    style: TextStyle(color: GlobalColors.grayColor),
-                  )
-                ],
-              )
-            ],
-          ),
-        ],
+            DefaultGap(
+              count: 2,
+            ),
+            Text(
+              name ?? 'Professuer Mamadou',
+              style: TextStyle(color: Colors.white),
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.favorite,
+                  size: ScreensHelper.fromWidth(3),
+                  color: GlobalColors.grayColor,
+                ),
+                DefaultGap(
+                  isWidth: true,
+                  count: 1,
+                ),
+                Text(
+                  favNum ?? '15 856',
+                  style: TextStyle(color: GlobalColors.grayColor),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

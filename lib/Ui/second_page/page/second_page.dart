@@ -16,8 +16,7 @@ class SecondPage extends StatefulWidget {
 class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, allowFontScaling: true);
-    ScreensHelper(context);
+
     return Scaffold(
       backgroundColor: GlobalColors.backgroundColor,
       body: SingleChildScrollView(
@@ -51,16 +50,14 @@ class _SecondPageState extends State<SecondPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: ScreensHelper.fromWidth(5)),
-                  child: Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Podcasts',
-                          style: GlobalStyles.baseTitle,
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Podcasts',
+                        style: GlobalStyles.baseTitle,
+                      ),
+                    ],
                   ),
                 ),
                 DefaultGap(),
@@ -79,17 +76,15 @@ class _SecondPageState extends State<SecondPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: ScreensHelper.fromWidth(5)),
-                  child: Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Populaire cette semaine',
-                          style: GlobalStyles.baseTitle
-                              .copyWith(fontSize: ScreenUtil()?.setSp(55)),
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Populaire cette semaine',
+                        style: GlobalStyles.baseTitle
+                            .copyWith(fontSize: ScreenUtil()?.setSp(55)),
+                      ),
+                    ],
                   ),
                 ),
                 Container(
@@ -99,22 +94,28 @@ class _SecondPageState extends State<SecondPage> {
                         itemCount: 6,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
-                          return index == 0 ? CardsWithMenu(text: 'Le monde selon Mamadou', imgurl: 'assets/images/pic1.png',) : CardsWithMenu(text: 'Docteur Sarah', imgurl: 'assets/images/pic2.png',);
+                          return index == 0
+                              ? CardsWithMenu(
+                                  text: 'Le monde selon Mamadou',
+                                  imgurl: 'assets/images/pic1.png',
+                                )
+                              : CardsWithMenu(
+                                  text: 'Docteur Sarah',
+                                  imgurl: 'assets/images/pic2.png',
+                                );
                         })),
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: ScreensHelper.fromWidth(5)),
-                  child: Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Nouveautes',
-                          style: GlobalStyles.baseTitle
-                              .copyWith(fontSize: ScreenUtil()?.setSp(55)),
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Nouveautes',
+                        style: GlobalStyles.baseTitle
+                            .copyWith(fontSize: ScreenUtil()?.setSp(55)),
+                      ),
+                    ],
                   ),
                 ),
                 ListView.builder(
@@ -122,22 +123,28 @@ class _SecondPageState extends State<SecondPage> {
                     shrinkWrap: true,
                     itemCount: 3,
                     itemBuilder: (context, index) {
-                      return index == 0 ? HorizantalWithMenu(img: 'assets/images/pic5.png',) : index == 1 ? HorizantalWithMenu(img: 'assets/images/pic6.png') : HorizantalWithMenu(img: 'assets/images/pic7.png');
+                      return index == 0
+                          ? HorizantalWithMenu(
+                              img: 'assets/images/pic5.png',
+                            )
+                          : index == 1
+                              ? HorizantalWithMenu(
+                                  img: 'assets/images/pic6.png')
+                              : HorizantalWithMenu(
+                                  img: 'assets/images/pic7.png');
                     }),
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: ScreensHelper.fromWidth(5)),
-                  child: Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'PodCasteurs',
-                          style: GlobalStyles.baseTitle
-                              .copyWith(fontSize: ScreenUtil()?.setSp(55)),
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'PodCasteurs',
+                        style: GlobalStyles.baseTitle
+                            .copyWith(fontSize: ScreenUtil()?.setSp(55)),
+                      ),
+                    ],
                   ),
                 ),
                 Container(
@@ -147,9 +154,15 @@ class _SecondPageState extends State<SecondPage> {
                         itemCount: 6,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
-                          return index == 0 ? PodCasterWidget(image: 'assets/images/pic3.png') : PodCasterWidget(image: 'assets/images/pic4.png',);
+                          return index == 0
+                              ? PodCasterWidget(image: 'assets/images/pic3.png')
+                              : PodCasterWidget(
+                                  image: 'assets/images/pic4.png',
+                                );
                         })),
-                DefaultGap(count: 20,),
+                DefaultGap(
+                  count: 20,
+                ),
               ],
             ),
           ),
@@ -160,6 +173,7 @@ class _SecondPageState extends State<SecondPage> {
 
   _getSearchBar() {
     return TextFormField(
+      style: TextStyle(color: Colors.white),
       textInputAction: TextInputAction.search,
       keyboardType: TextInputType.text,
       onTap: () {},

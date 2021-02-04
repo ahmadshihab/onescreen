@@ -24,9 +24,12 @@ class EpisodeWidget extends StatelessWidget {
         Container(
             width: ScreensHelper.fromWidth(12),
             height: ScreensHelper.fromHeight(6),
-            child: CustomImage.rectangle(
-              image: imgPage ?? 'assets/images/placeholders/placeholder.jpg',
-              isNetworkImage: false,
+            child: Padding(
+              padding: EdgeInsets.only(left: 3),
+              child: CustomImage.rectangle(
+                image: imgPage ?? 'assets/images/placeholders/placeholder.jpg',
+                isNetworkImage: false,
+              ),
             )),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: ScreensHelper.fromWidth(4)),

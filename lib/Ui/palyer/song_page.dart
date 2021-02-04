@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:rjs/Ui/common_widget/app_navigator.dart';
 import 'package:rjs/Ui/common_widget/select_option_row.dart';
 import 'package:rjs/app/app.dart';
 import 'package:rjs/core/Util.dart';
 import 'package:rjs/core/custom_dimensions.dart';
+import 'package:rjs/core/resources.dart';
 import 'package:rjs/core/style/base_colors.dart';
+import 'package:rjs/core/utils/screen_utils/screen_utils.dart';
 
 import 'local/date_time.dart';
 import 'local/languageRow.dart';
@@ -18,10 +21,10 @@ class SongPage extends StatefulWidget {
 }
 
 class _SongPageState extends State<SongPage> {
-
   @override
   Widget build(BuildContext context) {
-
+    ScreenUtil.init(context, allowFontScaling: true);
+    ScreensHelper(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
@@ -57,7 +60,9 @@ class _SongPageState extends State<SongPage> {
         ),
         body: Padding(
           padding:
-              EdgeInsets.all(CustomDimensions(context).blockSizeHorizontal * 2),
+              EdgeInsets.all(
+                ScreensHelper.fromWidth(2)
+              ),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +71,8 @@ class _SongPageState extends State<SongPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical:
-                          CustomDimensions(context).blockSizeVertical * 2),
+                          CustomDimensions(context).blockSizeVertical * 2,
+                  horizontal: ScreensHelper.fromWidth(2)),
                   child: Text(
                     'Voyager avec Nourya Kone grâce aux témoignages de nombreux \nvoyageurs qui vous feront découvrir les meilleurs endroits.',
                     style: TextStyle(
@@ -83,7 +89,8 @@ class _SongPageState extends State<SongPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical:
-                          CustomDimensions(context).blockSizeVertical * 2),
+                          CustomDimensions(context).blockSizeVertical * 2,
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -222,80 +229,98 @@ Widget topSection(BuildContext context) {
   return Container(
     padding: EdgeInsets.symmetric(
         horizontal: CustomDimensions(context).blockSizeHorizontal),
-    height: CustomDimensions(context).height * 0.6,
+    height: ScreensHelper.fromHeight(47.8),
     child: Stack(
       children: [
         Image.asset(
           'assets/images/song_image.png',
           fit: BoxFit.cover,
           width: CustomDimensions(context).width,
+          height: ScreensHelper.fromHeight(40),
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            height: CustomDimensions(context).height * 0.18,
-            color: Colors.black,
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '03:00 / 05:00',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      customText('Je t’emmène \nen voyage', 29, true),
-                      Row(
+        Positioned(
+            bottom: 0,
+            child: Padding(
+              padding:
+                  EdgeInsets.symmetric(horizontal: ScreensHelper.fromWidth(2)),
+              child: Container(
+                width: ScreensHelper.fromWidth(90),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                          right: ScreensHelper.fromWidth(3)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(
-                            Icons.remove_red_eye_outlined,
-                            color: GreyAccent,
-                            size: 9,
+                          Text(
+                            '03:00 / 05:00',
+                            style: TextStyle(color: Colors.white),
                           ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: CustomDimensions(context)
-                                        .blockSizeHorizontal *
-                                    2),
-                            child: Text(
-                              '2231',
-                              style: TextStyle(color: GreyAccent, fontSize: 9),
-                            ),
-                          )
+                          buildLocalImage('assets/images/backward_icon.png'),
                         ],
                       ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                    flex: 1,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    ),
+                    DefaultGap(
+                      count: 2,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        buildLocalImage('assets/images/backward_icon.png'),
-                        Container(
-                          width: CustomDimensions(context).width * 0.12,
-                          height: CustomDimensions(context).width * 0.12,
-                          child: IconButton(
-                              icon: Icon(
-                            Icons.pause,
-                            color: Colors.white,
-                          )),
-                          decoration: BoxDecoration(
-                            color: RedColor,
-                            shape: BoxShape.circle,
-                          ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            customText('Je t’emmène \nen voyage', 29, true),
+                            Container(
+                              color: BlackColor,
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.remove_red_eye_outlined,
+                                    color: GreyAccent,
+                                    size: 9,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: CustomDimensions(context)
+                                                .blockSizeHorizontal *
+                                            2),
+                                    child: Text(
+                                      '2231',
+                                      style: TextStyle(
+                                          color: GreyAccent, fontSize: 9),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                        buildLocalImage('assets/images/forward_icon.png'),
+                        Column(
+                          children: [
+                            Container(
+                              child: IconButton(
+                                  icon: Icon(
+                                Icons.pause,
+                                color: Colors.white,
+                              )),
+                              decoration: BoxDecoration(
+                                color: RedColor,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                            DefaultGap(
+                              count: 2,
+                            ),
+                            buildLocalImage('assets/images/forward_icon.png'),
+                          ],
+                        ),
                       ],
-                    ))
-              ],
-            ),
-          ),
-        )
+                    ),
+                  ],
+                ),
+              ),
+            )),
       ],
     ),
   );

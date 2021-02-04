@@ -18,8 +18,10 @@ Widget dateAndTime(BuildContext context) {
                   topLeft: Radius.circular(8), bottomLeft: Radius.circular(8)),
             ),
             child: Center(
-              child: Text('19h30',
-                  style: TextStyle(color: Colors.white, fontSize: 32)),
+              child: Center(
+                child: Text('19h30',
+                    style: TextStyle(color: Colors.white, fontSize: 32)),
+              ),
             )),
 
         Container(

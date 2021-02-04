@@ -57,12 +57,13 @@ class _FilteredPageState extends State<FilteredPage> {
               buildFilterItem(context, 'Tirer par', 'Ordre Alphabétique'),
               Text(
                 'Catégorie',
-                style: TextStyle(fontSize: 14, color: Colors.white),
+                style: TextStyle(fontSize: 14, color: Colors.white , fontWeight: FontWeight.w300),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
                     vertical: CustomDimensions(context).blockSizeVertical),
                 child: TextField(
+                  style: TextStyle(color: WhiteColor),
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
@@ -79,7 +80,7 @@ class _FilteredPageState extends State<FilteredPage> {
               buildFilterItem(context, 'Animateur', 'Voir tout'),
               Text(
                 'Langue',
-                style: TextStyle(fontSize: 14, color: Colors.white),
+                style: TextStyle(fontSize: 14, color: Colors.white , fontWeight: FontWeight.w300),
               ),
               selectOptionRow(context, 'Français', '105',
                   horizontal: CustomDimensions(context).devicePixelRatio),
@@ -204,7 +205,7 @@ Widget buildFilterItem(BuildContext context, String text, String label) {
       Text(
         text,
         style: TextStyle(
-            fontSize: 14, color: Colors.white, fontFamily: 'Montserrat-light'),
+            fontSize: 14, color: Colors.white, fontFamily: 'Montserrat-light' , fontWeight: FontWeight.w300),
       ),
       dropDownButton(context, label),
     ],

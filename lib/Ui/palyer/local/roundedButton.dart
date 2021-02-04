@@ -22,7 +22,7 @@ Widget roundedButton(
             textAlign: TextAlign.center,
             style: TextStyle(
               color: WhiteColor,
-              fontSize: 12,
+              fontSize: 10,
             ),
           ),
         )),

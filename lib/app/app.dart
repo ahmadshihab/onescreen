@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rjs/Ui/Auth/Pages/register_page.dart';
-import 'package:rjs/Ui/main_home_screen/main_home_screen.dart';
+import 'package:rjs/Ui/Emissions/emissions_page.dart';
+import 'package:rjs/Ui/palyer/song_page.dart';
+import 'package:rjs/Ui/start_page/start_page.dart';
 
 class App extends StatelessWidget {
   // This widget is the root of your application.
@@ -25,7 +26,7 @@ class App extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: RegisterPage(),
+      home: SongPage(),
     );
   }
 }

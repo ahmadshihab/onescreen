@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:rjs/Ui/common_widget/app_navigator.dart';
 import 'package:rjs/Ui/common_widget/favorite_item.dart';
 import 'package:rjs/Ui/common_widget/radio_topBar.dart';
 import 'package:rjs/core/Util.dart';
 import 'package:rjs/core/custom_dimensions.dart';
 import 'package:rjs/core/style/base_colors.dart';
+import 'package:rjs/core/utils/screen_utils/screen_utils.dart';
 
 class EmissionPage extends StatefulWidget {
   @override
@@ -14,8 +16,6 @@ class EmissionPage extends StatefulWidget {
 class _EmissionPageState extends State<EmissionPage> {
   @override
   Widget build(BuildContext context) {
-
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0XFF141414),
@@ -96,51 +96,53 @@ class _EmissionPageState extends State<EmissionPage> {
                       ),
                       itemBuilder: (context, index) {
                         return Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Stack(
-                                children: [
-                                  Image.asset(
-                                      'assets/images/favorite_image.png',
-                                      fit: BoxFit.fitWidth),
-                                  Positioned(
-                                      bottom: CustomDimensions(context)
-                                              .blockSizeVertical *
-                                          0.8,
-                                      child: Padding(
-                                          padding: EdgeInsets.all(
-                                              CustomDimensions(context)
-                                                  .blockSizeVertical),
-                                          child: buildLocalSvg(
-                                              'assets/images/wave_icon.svg')))
-                                ],
-                              ),
-                              Row(
-                                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  customText(
-                                    'Raconte moi une histoire',
-                                    7,
-                                    false,
-                                  ),
-                                  Spacer(),
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      vertical: CustomDimensions(context)
-                                              .blockSizeVertical *
-                                          2,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Stack(
+                                  children: [
+                                    Image.asset(
+                                        'assets/images/favorite_image.png',
+                                        fit: BoxFit.fitWidth),
+                                    Positioned(
+                                        bottom: CustomDimensions(context)
+                                                .blockSizeVertical *
+                                            0.8,
+                                        child: Padding(
+                                            padding: EdgeInsets.all(
+                                                CustomDimensions(context)
+                                                    .blockSizeVertical),
+                                            child: buildLocalSvg(
+                                                'assets/images/wave_icon.svg')))
+                                  ],
+                                ),
+                                Row(
+                                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    customText(
+                                      'Raconte moi une histoire',
+                                      7,
+                                      false,
                                     ),
-                                    child: Icon(
-                                      Icons.more_vert,
-                                      color: WhiteColor,
-                                      size: 10,
+                                    Spacer(),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: CustomDimensions(context)
+                                                .blockSizeVertical *
+                                            2,
+                                      ),
+                                      child: Icon(
+                                        Icons.more_vert,
+                                        color: WhiteColor,
+                                        size: 10,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              )
-                            ],
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                           padding: EdgeInsets.only(
                             right:
@@ -180,7 +182,7 @@ Widget similarsList(BuildContext ctx) {
                   right: CustomDimensions(ctx).blockSizeHorizontal * 2),
               width: CustomDimensions(ctx).width * 0.4,
               height: CustomDimensions(ctx).height * 0.25,
-              child: favoriteItem(context, fontSize: 10));
+              child: favoriteItem(context, fontSize: 9));
         }),
   );
 }

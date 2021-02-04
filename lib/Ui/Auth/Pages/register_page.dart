@@ -19,14 +19,16 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color(0xFF0B0B0B),
+        ),
         backgroundColor: Color(0xFF0B0B0B),
         body: SingleChildScrollView(
           child: Column(
             children: [
               Padding(
-                  padding: EdgeInsets.only(top: 50),
-                  child: customText('S’inscrire', 26.0, true)
-              ),
+                  padding: EdgeInsets.only(top: 5),
+                  child: customText('S’inscrire', 26.0, true)),
               Container(
                 padding: EdgeInsets.only(
                   right: CustomDimensions(context).width * 0.05,
@@ -36,8 +38,18 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Column(
                   children: [
                     Align(
-                        alignment: Alignment.topLeft,
-                        child: customText('Pays', 16, false)),
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'Pays',
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          color: WhiteColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
                     SizedBox(
                       height: 10,
                     ),
@@ -100,12 +112,12 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: CustomDimensions(context).height * 0.1,
               ),
-              customText(
-                  'En cliquant sur «S’inscrire», vous acceptez nos', 16, false),
+              Center(
+                child: customText(
+                    'En cliquant sur «S’inscrire», vous acceptez nos', 14, false),
+              ),
               GestureDetector(
-                onTap: () {
-
-                },
+                onTap: () {},
                 child: Text(
                   'Termes et conditions d’utilisation',
                   style: TextStyle(
@@ -134,7 +146,18 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
       child: Column(
         children: [
-          Align(alignment: Alignment.topLeft, child: customText(s, 16, false)),
+          Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                s,
+                textAlign: TextAlign.right,
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  color: WhiteColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                ),
+              )),
           SizedBox(
             height: 10,
           ),
